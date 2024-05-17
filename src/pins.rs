@@ -62,6 +62,7 @@ fn spawn_single_pin(commands: &mut Commands, position: Vec2, timestamp_last_hit:
         ))
         .insert(RigidBody::Fixed)
         .insert(Collider::ball(shape_pin.radius))
+        .insert(CollisionGroups::new(Group::GROUP_3, Group::GROUP_1))
         .insert(Transform::from_xyz(position.x, position.y, 0.0))
         .insert(Restitution::coefficient(0.7))
         .insert(Pin {

@@ -41,6 +41,7 @@ fn spawn_launcher(mut commands: Commands) {
             Stroke::new(Color::TEAL, 2.0),
         ))
         .insert(RigidBody::KinematicPositionBased)
+        .insert(CollisionGroups::new(Group::GROUP_4, Group::GROUP_1))
         .insert(Collider::cuboid(
             shape_launcher.extents.x / 2.0,
             shape_launcher.extents.y / 2.0,

@@ -42,6 +42,10 @@ fn spawn_ball(mut commands: Commands) {
         .insert(Collider::ball(shape_ball.radius))
         .insert(Transform::from_xyz(ball_pos.x, ball_pos.y, 0.0))
         .insert(ActiveEvents::COLLISION_EVENTS)
+        .insert(CollisionGroups::new(
+            Group::GROUP_1,
+            Group::GROUP_2 | Group::GROUP_3 | Group::GROUP_4 | Group::GROUP_10,
+        ))
         .insert(Restitution::coefficient(0.7))
         .insert(Ball);
 }

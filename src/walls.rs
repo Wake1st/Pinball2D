@@ -40,6 +40,7 @@ fn spawn_walls(mut commands: Commands) {
             shape_top_and_bottom_wall.extents.y / 2.0,
         ))
         .insert(Sensor)
+        .insert(CollisionGroups::new(Group::GROUP_10, Group::GROUP_1))
         .insert(Transform::from_xyz(
             bottom_wall_pos.x,
             bottom_wall_pos.y,
@@ -58,6 +59,7 @@ fn spawn_walls(mut commands: Commands) {
             Fill::color(Color::TEAL),
         ))
         .insert(RigidBody::Fixed)
+        .insert(CollisionGroups::new(Group::GROUP_2, Group::GROUP_1))
         .insert(Collider::cuboid(
             shape_top_and_bottom_wall.extents.x / 2.0,
             shape_top_and_bottom_wall.extents.y / 2.0,
@@ -84,6 +86,7 @@ fn spawn_walls(mut commands: Commands) {
             Fill::color(Color::TEAL),
         ))
         .insert(RigidBody::Fixed)
+        .insert(CollisionGroups::new(Group::GROUP_2, Group::GROUP_1))
         .insert(Collider::cuboid(
             shape_left_and_right_wall.extents.x / 2.0,
             shape_left_and_right_wall.extents.y / 2.0,
@@ -101,6 +104,7 @@ fn spawn_walls(mut commands: Commands) {
             Fill::color(Color::TEAL),
         ))
         .insert(RigidBody::Fixed)
+        .insert(CollisionGroups::new(Group::GROUP_2, Group::GROUP_1))
         .insert(Collider::cuboid(
             shape_left_and_right_wall.extents.x / 2.0,
             shape_left_and_right_wall.extents.y / 2.0,
@@ -129,6 +133,7 @@ fn spawn_walls(mut commands: Commands) {
             Fill::color(Color::TEAL),
         ))
         .insert(RigidBody::Fixed)
+        .insert(CollisionGroups::new(Group::GROUP_2, Group::GROUP_1))
         .insert(Collider::cuboid(
             shape_launcher_wall.extents.x / 2.0,
             shape_launcher_wall.extents.y / 2.0,
@@ -166,6 +171,7 @@ fn spawn_walls(mut commands: Commands) {
             Fill::color(Color::TEAL),
         ))
         .insert(RigidBody::Fixed)
+        .insert(CollisionGroups::new(Group::GROUP_2, Group::GROUP_1))
         .insert(Collider::polyline(
             vec![
                 Vec2::new(0.0, 0.0),
